@@ -127,7 +127,7 @@ class MyPromise {
     static resolve(onResolve) {
         const res = onResolve
         return new MyPromise((resolve, reject) => {
-            if (res instanceof Mypromise) {
+            if (res instanceof MyPromise) {
                 queueMicrotask(() => {
                     res.then((value) => {
                         resolve(value)
@@ -147,7 +147,7 @@ class MyPromise {
     static reject(onReject) {
         const res = onReject
         return new MyPromise((resolve, reject) => {
-            if (res instanceof Mypromise) {
+            if (res instanceof MyPromise) {
                 queueMicrotask(() => {
                     res.then((value) => {
                         resolve(value)
